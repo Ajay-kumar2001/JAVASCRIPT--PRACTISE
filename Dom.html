@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div ><h1>hello</h1> <span onclick="fun1()"  class="item">javascript</span></div>
+            <p  onclick="fun()" id="ptag" class="p item " >javaScript is importent</p>
+            <a href="mathClass.html"> clic me go to math class</a>
+            
+        </div>
+        <script>
+            function fun(){
+            var ref=document.getElementById("ptag").innerHTML+="for web devolopment"
+            console.log(ref)
+            document.getElementById("ptag").styles.backgroundColor="blue"
+            }
+            function fun1(){
+            var c=document.getElementsByClassName("item")
+            console.log(c)
+            c[0].style.backgroundColor="pink"
+            c[0].style.color="red"
+            console.log(c)
+            c[0].innerHTML="lern java script "
+            }
+        </script>
+    </div>
+    
+</body>
+</html>
