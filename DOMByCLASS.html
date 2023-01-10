@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    <div class="body">
+        <div class="grid-container">
+           
+            <div onclick="fun" class="items">2</div>
+            <div onclick="fun" class="items">3</div>
+            <div onclick="fun" class="items">4</div>
+            <div onclick="fun" class="items">6</div>
+            <div onclick="fun" class="items">5</div>
+            <div onclick="fun" class="items">9</div>
+            
+
+
+        <script>
+      function fun(){
+         var ref= document.getElementsByTagName('div')
+         console.log(ref)
+         for (let i=0; i<ref.length;i++){
+            ref[i].innerHTML="well come"
+            console.log(i)
+         }
+         console.log(ref)
+        }
+        </script>
+            
+           
+        </div>
+    </div>
+    
+</body>
+    
+
+</html>
