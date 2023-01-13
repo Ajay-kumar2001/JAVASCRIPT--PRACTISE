@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .con{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .items{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .itemss{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="con">
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="itemss"></div>
+        <div class="itemss"></div>
+        <div class="itemss"></div>
+        <div class="itemss"></div>
+
+        
+    </div>
+    <button onclick="fun()">click me</button>
+    <script>
+        function fun(){
+
+            var ref=document.getElementsByClassName("items")
+            var ref2=document.getElementsByClassName("itemss")
+            console.log(ref)
+            console.log(ref2)
+           var temp= ref[0]
+           ref[0]=ref2[0]
+           ref2=[0]=temp
+           console.log(ref[0])
+           console.log(ref2[0])
+        }
+
+
+    </script>
+    
+</body>
+</html>

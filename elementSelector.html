@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .x{
+            width: 100px;
+            display: inline-block;
+            height: 100px;
+            background-color: red;
+            animation-name: anm;
+            animation-duration: 6s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            position: relative;
+
+        }
+        @keyframes anm {
+            0%{
+                left: 200px;
+                top:0px
+            }
+            25%{
+                left:200px;
+                top: 200px;
+            }
+            75%{
+            left: -200px;
+            top:200px;
+            }
+            100%{
+                left: -200px;
+                top:-200px
+            }
+
+        }
+        .con{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="con">
+    <div>
+        <p onclick="fun()">2</p>
+    <p onclick="fun()">9</p>
+    <p onclick="fun()">6</p>
+    <p onclick="fun()">9</p>
+    <p onclick="fun()">6</p>
+    </div>
+    </div>
+    
+    </body>
+    <Script>
+        function fun(){
+        var refs=document.getElementsByTagName("p")
+        for(let i=0;i<refs.length;i++){
+            
+            if(i==0){
+                refs[i].style.backgroundColor="blue"
+                refs[i].className="x"
+                console.log(refs[i].classList)
+            }
+            if(i==2){
+                refs[i].style.backgroundColor="black"
+                console.log(refs[i].classList)
+            }
+            if(i==3){
+                refs[i].style.backgroundColor="pink"
+                console.log(refs[i].classList)
+            }
+            if(i==4){
+                refs[i].style.backgroundColor="green"
+                console.log(refs[i].classList)
+            }
+            if(i==5){
+                refs[i].style.backgroundColor="brown"
+                console.log(refs[i].classList)
+            }
+            if(i==6){
+                refs[i].style.backgroundColor="yellow"
+            }
+    
+        }     
+        
+        }
+    </Script>
+</body>
+</html>
