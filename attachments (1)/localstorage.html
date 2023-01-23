@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: aqua;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input  id ="name" placeholder="name" type="text"/>
+        <input id="rollno" placeholder="rollno" type="text"/>
+        <div>
+            <input id="sub1" placeholder="sub1" type="text">
+            <input id=" sub2"  placeholder="sub2" type="text">
+            <input  id="sub3"  placeholder="sub3" type="text">
+            <!-- <input id=" sub4"   type="text">
+            <input id=" sub5"   type="text">
+            <input id=" sub6"   type="text"> -->
+            <button onclick="sub_student_data()" >submit</button>
+        </div>
+    </div>
+    <script>
+        let divcon=document.querySelector("div")
+        divcon.classList.add("container")
+        
+      
+        
+
+
+        function sub_student_data(){
+        
+        let name=document.getElementById("name").value
+         let id=document.getElementById("rollno").value
+        let sub1=document.getElementById("sub1").value
+        let obj={name:name,rollno:id,sub1:sub1}
+        localStorage.setItem(name,obj)
+       let student_data= localStorage.getItem(name)
+       console.log(student_data.name)
+       
+        
+        // // localStorage.setItem("a", ob)
+        // localStorage.setItem("b",JSON.stringify(arr))
+        // console.log(""+typeof JSON.parse(localStorage.getItem("b")))
+        // console.log(obj)
+       
+
+      
+
+           }
+       
+
+    </script>
+</body>
+</html>

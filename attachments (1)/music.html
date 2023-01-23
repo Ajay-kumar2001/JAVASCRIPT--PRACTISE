@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <style>
+    .con{
+        width:300px;
+        height: 500px;
+        margin: auto;
+        top:10vh;
+        background-color: bisque;
+    }
+    .btn{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+   </style>
+</head>
+<body>
+    <div class="con">
+        <audio controls id="ad">
+            <source src="au.mpeg" type="audio/mpeg">
+          </audio>
+          <div class="btn">
+            
+        <div class="bw" onclick="bwd(this)"><i class="fa-solid fa-backward"></i></div>
+        <div class="pl" onclick="ply(this)"><i class="fa-solid fa-play"></i></div>
+        <div class="fw" onclick="fwd(this)"><i class="fa-solid fa-forward"></i></div>
+        </div>
+        <input id="pbr" type="range" min="0" value="0" onchange="upst()"/>
+
+         
+
+    </div>
+    <script>
+        let pref=document.getElementById("pbr")
+        function ply(pref)
+        {
+            
+
+
+            let refa=document.getElementById("ad")
+            pbr.max=refa.duration
+           let br=pref.firstChild
+             if(br.classList.contains('fa-play'))
+            {
+               br.classList.remove('fa-play')
+                br.classList.add('fa-pause')
+                refa.play()
+
+            }
+            else{
+                br.classList.remove('fa-pause')
+                br.classList.add('fa-play')
+                refa.pause()
+
+            }
+
+                     
+
+        }
+function fwd(fbr)
+{
+    let refa=document.getElementById("ad")
+    refa.currentTime+=10
+    
+}
+function bwd(fbr)
+{
+    let refa=document.getElementById("ad")
+    refa.currentTime-=10
+    
+}
+
+function stup()
+{
+    let refa=document.getElementById("ad")
+    pref.value=refa.currentTime
+
+}
+setInterval(stup,500)
+
+function upst()
+{
+    let refa=document.getElementById("ad")
+    refa.currentTime=pref.value
+
+}
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="a">
+        <option value="1">cse</option>
+        <option value="2">eee</option>
+        <option value="3">ece</option>
+
+    </select>
+    <div id="s1"></div>
+</body>
+<script>
+    
+    
+    let ref = document.getElementById("a")
+    ref.addEventListener("change",fun)
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function fun(){
+//get values from ref and updateing to #s1
+       let ref2=document.getElementById("s1")
+       let bk="selected"+ref.value
+        ref2.innerHTML=bk
+       }
+    
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .main-con{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-around;
+        }
+        .r-l-con{
+
+        width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons{
+        
+            display: flex;
+
+        }
+        .buttons button{
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="main-con">
+        <div></div>
+        <div class="r-l-con">
+            <div onclick="right()"><i class="fa-solid fa-less-than"></i></div>
+            <div onclick="left()"><i class="fa-solid fa-greater-than"></i></div>
+        </div>
+        <div class="buttons">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+    <script>
+        var i=0
+        var arr=["jubli.webp","jubli2.webp","jubli3.webp"]
+        function right(){
+            i++
+            if (i>=arr.length){
+                i=0
+                ref=document.querySelector("main-con").style.backgroundImg=arr[i]
+
+            }
+
+
+
+        }
+        function left(){
+
+        }
+    </script>
+    
+</body>
+</html>

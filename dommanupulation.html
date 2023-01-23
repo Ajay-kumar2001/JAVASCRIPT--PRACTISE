@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+       .retarentbody{
+        display: flex;
+        width: 100%;
+        height: 60vh;
+       flex-direction: column;
+       justify-content: space-around; 
+        
+       }     
+       .fa-regular{
+        font-size: 30px;
+        
+       }
+       .lrContainer{
+        width: 100%;
+        display: flex;
+        justify-content:space-between;
+       }
+       
+       img{
+        width:100%;
+        height: 500px;
+       }
+       .buttons{
+        display: flex;
+        justify-content:center ;
+        align-items: center;
+       }
+       .buttonSize{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+       }
+    </style>
+    
+</head>
+<body>
+    <div class="retarentbody">
+        <div></div>
+        <div class="lrContainer">
+            <div onclick="fun()" class="left"><i class="fa-regular fa-less-than"></i></div>
+            <div onclick="fun1()" class="righ"><i class="fa-regular fa-greater-than"></i></div>
+        </div> 
+        <div class="buttons">
+            <div class="slider">
+                <button class="buttonSize"></button>
+                <button class="buttonSize"  ></button>
+                <button class="buttonSize"></button>
+    
+            </div>   
+       </div>
+
+    </div>
+    
+
+    </div>
+    <script>
+        var i=0
+        var arr=['jubli1.jpg',"jubli2.webp","jubli3.webp"]
+        console.log(arr)
+        function fun(){
+            i++
+            if (i>arr.length-1){
+                i=0
+            }
+        
+            document.getElementById("i1").src=arr[i]
+        }    
+            function fun1(){
+                i--
+                if (i==-1)
+                i=arr.length-1
+            
+            document.getElementById("i1").src=arr[i]
+            }
+
+    </script>
+</body>
+</html>
