@@ -1,16 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .cl{
+            border-radius: 5px;
+            color: aqua;
+            width: 100px;
+            height: 40px;
+            background-color: black;
+
+        }
+    </style>
     
 </head>
 <body>
-    <div class="cona">
-        <div class="row">
-            <ul>
-                <li class="an"><a href="mathClass.html"><span id="die"></span></a></li>
-            </ul>
-        </div>
-    </div>
+     
+        <input  id="sname" type="text" placeholder="student name" />
+        <input  id="rollno" type="text" placeholder="rollno" />
+        <input class="sub1" type="text" placeholder="sub1" />
+        <input class="sub2" type="text" placeholder="sub2"/>
+        <button >submit</button>
+        
+
+    
+    <script>
+        let butref=document.getElementsByTagName("button")[0]
+        butref.addEventListener("click",fun)
+        butref.style.backgroundColor="red"
+        butref.className="cl"
+
+    function fun(){
+        
+         let r=document.getElementById("sname")
+        studentname=r.value
+        let r1=document.getElementById("rollno")
+       let rollno1=r1.value
+        let r2=document.getElementsByClassName("sub1")[0]
+       let sub1=r2.value
+        let r3=document.getElementsByClassName("sub2")[0]
+       let sub2=r3.value
+       let ob={studentName:studentname,rolNo:rollno1,sub1:sub1,sub2:sub2}
+
+       console.log(ob)
+      sessionStorage.setItem(studentname,JSON.stringify(ob))
+      console.log(JSON.stringify(ob))
+      let value=sessionStorage.getItem(studentname)
+      console.log(JSON.parse(value))
+      for (i in value.keys){console.log(value[i])
+
+      }
+
+
+
+    } 
+   
+
+
+
+       
+
+    </script>
     
 </body>
 </html>

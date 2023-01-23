@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+        
+        background-color: rgb(252, 234, 207);
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div>
+<input type="text" class="name"/>
+<input type="" class="rollno"/>
+<div class="sub-marks">
+    <input type="" class="sub1">
+    <input type="text" class="sub2"/>
+    <input type="text" class="sub3"/>
+    <input type="text" class="sub4"/>
+    <input type="text" class="sub5"/>
+</div>
+</div>
+<script>
+    let con=document.querySelector("div")
+    console.log(con)
+ con.classList.add("container")
+let sname= document.getElementsByClassName(name)[0]
+console.log(sname)
+
+localStorage.setItem("student", sname.value)
+ 
+</script>
+</body>
+</html>
