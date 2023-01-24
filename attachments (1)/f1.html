@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+   .rt{
+    position: absolute;
+    right:10px;
+    top:50%;
+    color:red;
+   }
+   .con{
+    position: relative;
+    width:300px;
+    height:300px;
+   }
+   .lt{
+    position: relative;
+    top:50%;
+    left:10px;
+    color:red;
+   }
+   .dotcon{
+    position: absolute;
+    width:100%;
+    bottom: 10px;
+    justify-content: center;
+    display: flex;
+   }
+   .dotcon div{
+    padding: 3px;
+   }
+   .fa-solid{
+    color:coral;
+   }
+   .fa-regular{
+    color:darkgoldenrod;
+   }
+  </style>
+    
+</head>
+<body>
+<div class="con">
+  <div class="lt" onclick="fun1()"><i class="fa-solid fa-less-than"></i></div>
+   <img id="i1" src="1.jpg" width="300px" height="300px"/>
+  <div class="rt" onclick="fun()"><i class="fa-solid fa-greater-than"></i></div>
+<div class="dotcon">
+  <div onclick="fun2(0,this)"><i class="fa-solid fa-circle"></i></div>
+  <div onclick="fun2(1,this)"><i class="fa-regular fa-circle"></i></div>
+  <div onclick="fun2(2,this)"><i class="fa-regular fa-circle"></i></div>
+  <div onclick="fun2(3,this)"><i class="fa-regular fa-circle"></i></div>
+  <div onclick="fun2(4,this)"><i class="fa-regular fa-circle"></i></div>
+</div>  
+</div>   
+
+   
+     <script>
+     var i=0
+     var arr=["1.jpg","2.webp","3.webp","4.jpg","5.jpg"]
+  function fun(){
+    let re=document.getElementsByClassName("fa-circle")
+    re[i].className="fa-regular fa-circle"
+   i++
+    
+      if(i>=arr.length){
+        i=0
+      }
+     
+      console.log(i)
+      document.getElementById("i1").src=arr[i]
+      re[i].className="fa-solid fa-circle"
+
+    }
+    function fun1()
+    {
+      let re=document.getElementsByClassName("fa-circle")
+    re[i].className="fa-regular fa-circle"
+i--;
+if(i==-1)
+{
+  i=arr.length-1
+}
+console.log(i)
+document.getElementById("i1").src=arr[i]
+re[i].className="fa-solid fa-circle"
+    }
+
+   
+ function fun2(ind,e)
+ {
+  let re=document.getElementsByClassName("fa-solid fa-circle")
+  if(re.length>0)
+  {
+    re[0].className="fa-regular fa-circle"
+  }
+e.firstChild.className="fa-solid fa-circle"
+  document.getElementById("i1").src=arr[ind]
+  i=ind
+ } 
+
+
+ function fun3(){
+  let re= document.getElementsByClassName("fa-circle")
+  re[i].className="fa-regular fa-circle"
+  
+  i++
+
+
+  
+   
+     if(i>=arr.length){
+       i=0
+     }
+    
+     console.log(i)
+     document.getElementById("i1").src=arr[i]
+     re[i].className="fa-solid fa-circle"
+
+   }
+   
+
+  setInterval(fun3,3000)
+     
+    </script>
+    
+    
+</body>
+</html>
