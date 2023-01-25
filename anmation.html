@@ -11,7 +11,7 @@
             height: 100px;
             background-color: aqua;
             animation-name: qe;
-            animation-duration: 4s;
+            animation-duration: 7s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
             position: relative;
@@ -22,10 +22,11 @@
             height: 100px;
             background-color: aqua;
             animation-name: example;
-            animation-duration: 4s;
+            animation-duration: 7s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
             animation-delay: 10s;
+
             position: relative;
 
         }
@@ -90,17 +91,13 @@
             height: 50px;
             background-color: rgb(226, 12, 12);
             
-        position: relative;
-            left: 40%;
-            top:60vh;
+        transform: translate(500px,60vh);
         }
         .lchange{
-        
-            left: -10%;
+        transform: translate(450px,60vh);
         }
         .rchange{
-            position: relative;
-            left: 10%;
+            transform: translate(550px,60vh);
             background-color: black;
         }
     </Style>
@@ -115,12 +112,15 @@
     function fun1(){
         
     let ref=document.getElementsByClassName("con3")[0]
+    console.log(ref)
     ref.className="lchange"
     }
     function fun2(){
         
-        let ref=document.getElementsByClassName("con3")[0]
-        ref.className="rchange"
+        let ref1=document.getElementsByClassName("con3")[0]
+        ref1.className="rchange"
+        console.log(ref1)
+
         }
 </script>
 
