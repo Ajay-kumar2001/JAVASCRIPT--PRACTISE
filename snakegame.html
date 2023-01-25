@@ -48,6 +48,7 @@
             
         }
         
+        
     </Style>
     
 </head>
@@ -101,7 +102,7 @@
 
           <div id="i40" class="items">40</div>
           <div id="i41" class="items">41</div>
-          <div id="42" class="items">42</div>
+          <div id="i42" class="items">42</div>
           <div id="i43" class="items">43</div>
           <div id="i44" class="items">44</div>
           
@@ -110,7 +111,7 @@
           <div id="i47" class="items">47</div>
           <div id="i48" class="items">48</div>
           <div id="i49" class="items">49</div>
-          <div id="50" class="items">50</div>
+          <div id="i50" class="items">50</div>
           <div id="i51" class="items">51</div>
           <div id="i52" class="items">52</div>
           <div id="i53" class="items">53</div>
@@ -130,7 +131,7 @@
           <div id="i64" class="items">64</div>
           <div id="i65" class="items">65</div>
           <div id="i66" class="items">66</div>
-          <div id="67" class="items">67</div>
+          <div id="i67" class="items">67</div>
           <div id="i68" class="items">68</div>
           <div id="i69" class="items">69</div>
           <div id="i70" class="items">70</div>
@@ -176,7 +177,7 @@
 
         </div>
         <div  onclick="user(this)" class="die1">user<i class="fa-solid fa-dice-five size"></i> </div>
-        <div  class="die2">user<i class="fa-solid fa-dice-one size"></i> </div>
+        <div  class="die2">Computer<i class="fa-solid fa-dice-one size"></i> </div>
         <h1 id="dis"></h1>
     
         
@@ -185,73 +186,46 @@
 
    
     <script>
-         var usersum=0
-         var comsum=0
-         let arr=['<i class="fa-solid fa-dice-five size">','<i class="fa-solid fa-dice-one size">','<i class="fa-solid fa-dice-two size">','<i class="fa-solid fa-dice-three size">','<i class="fa-solid fa-dice-four size">','<i class="fa-solid fa-dice-six"></i>']
+         var usersum=1
+         var comsum=1
+         let arr=['<i class="fa-solid fa-dice-one size">','<i class="fa-solid fa-dice-two size">','<i class="fa-solid fa-dice-three size">','<i class="fa-solid fa-dice-four size">','<i class="fa-solid fa-dice-five size">','<i class="fa-solid fa-dice-six"></i>']
 function user(e){
-    let randem_num=Math.floor(Math.random()*6)
-    e.innerHTML=arr[randem_num]
-     usersum+=randem_num
+    let us=Math.floor(Math.random()*6)
+    let co=Math.floor(Math.random()*6)
+    let prev_user_box= document.getElementById("i"+usersum)
+    let prev_comp_box= document.getElementById("i"+comsum)
+    console.log(prev_user_box,prev_comp_box)
+        prev_user_box.className="items"
+        prev_comp_box.className="items"
 
-     if (usersum>99  ){
-
-        if (usersum>comsum){
-            let disp=document.getElementById ("dis")
-            disp.innerHTML="YOUE WORN THE GAME"
-        }
-        else if( usersum==comsum){
-            disp.innerHTML="DRAW"
-        }
-        else{
-            disp.innerHTML="YOUE LOOS THE GAME"
-        }
-
+    usersum+=us+1
+    comsum+=co+1
+    if (usersum >99 ||comsum>99)
+    {
+        declare_winner(usersum,comsum)
+        return
     }
-
-    let ids='i'+usersum
-     let divid= document.getElementById(ids)
-     
-     divid.className="img"
-    console.log(usersum,randem_num)
-let com=document.getElementsByClassName("die2")[0]
-computer(com)
     
-       
-} 
-
-
-function computer(e){
-    let randem_num=Math.floor(Math.random()*6)
-    e.innerHTML=arr[randem_num]
-    comsum+=randem_num
-    if (comsum>99  ){
-
-            if (usersum>comsum){
-                let disp=document.getElementById ("dis")
-                disp.innerHTML="YOUE WORN THE GAME"
-            }
-            else if( usersum==comsum){
-                disp.innerHTML="DRAW"
-            }
-            else{
-                disp.innerHTML="YOUE LOOS THE GAME"
-            }
+    console.log(usersum,comsum)
+   let user_box= document.getElementById("i"+usersum)
+   let comp_box= document.getElementById("i"+comsum)
+    console.log(user_box,comp_box)
+   user_box.className="img"
+   comp_box.className="img2"
+    
 
 }
+function declare_winner(usersum,comsum){
+    let ref_disp=document.getElementById("disp")
+    if (usersum>99){
+        ref_disp.innerHTML="user won"
+    }
+    else{
+        ref_disp.innerHTML="computer won"
+    }
+}
 
-    
-    let ids='i'+comsum
-    console.log(ids)
-     let divid= document.getElementById(ids)
-     
-     divid.className="img2"
-    
-
-
-       
-} 
-    </script>
-
+</script>
     
 </body>
 </html>

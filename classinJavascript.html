@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Test{
+            
+            constructor(x,y){
+            this.x=x
+            this.y=y
+        }
+        get name(){
+        
+            return this.x
+        }
+        set name(y){
+            this.x=y
+        }
+        display(){
+            console.log (this.x,this.y)
+        }
+    }
+        let obj=new Test( "ajay",30)
+        console.log(obj.x)
+        console.log(obj.y)
+        console.log(obj.name)
+        obj.name="sandeep"
+        console.log(obj.name)
+        obj.display()
+    </script>
+</body>
+</html>

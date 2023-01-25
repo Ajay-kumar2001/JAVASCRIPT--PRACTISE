@@ -86,21 +86,28 @@
             } 
         } 
         .con3{
+        
             width: 50px;
             height: 50px;
             background-color: rgb(226, 12, 12);
-            
-        position: relative;
-            left: 40%;
-            top:60vh;
+            transform: translate(500px,60vh);
+       
         }
         .lchange{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(226, 12, 12);
+        transform: translate(550px,60vh);
+    
         
-            left: -10%;
         }
         .rchange{
-            position: relative;
-            left: 10%;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(226, 12, 12);
+            transform: translate(450px,60vh);
+
+            left: calc(50+10)px;
             background-color: black;
         }
     </Style>
@@ -112,14 +119,16 @@
     <button onclick="fun1()">left</button>
     <button onclick="fun2()">right</button>
 <script>
+    let ref=document.getElementsByClassName("con3")[0]
     function fun1(){
         
-    let ref=document.getElementsByClassName("con3")[0]
+    
+    
     ref.className="lchange"
     }
     function fun2(){
         
-        let ref=document.getElementsByClassName("con3")[0]
+       
         ref.className="rchange"
         }
 </script>
