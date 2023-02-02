@@ -7,14 +7,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        body{
+            background-image: url("carimg2.jpg");
+            background-size: cover;
+        }
         .road{
+        
             background-color: black;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+        justify-content: center;   
             align-items: center;
             position: relative;
-            left: 30%;
+            left: 40%;
             width: 20%;
             height: 100vh;
         }
@@ -27,19 +32,127 @@
         .car1{
             color: rgb(243, 228, 25);
             font-size: 20px;
-            position: absolute;
-            left: 15%;
-            top: 10px;
+            transform: translate(100px,-80vh);
+            animation-name: key1;
+            
+            animation-duration:8s ;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+             
             
         }
         .car2{
             color: rgb(243, 228, 25);
             font-size: 20px;
-            position: absolute;
-            right: 15%;
-            top: 10px;
+            transform: translate(-100px,-60vh);
+            animation-name: key2;
+            animation-delay: s;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
             
         }
+        .car3{
+            color: rgb(243, 228, 25);
+            font-size: 20px;
+            transform: translate(85px,-50vh);
+            animation-name: key3;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        
+        }
+        .car4{
+            color: rgb(243, 228, 25);
+            font-size: 20px;
+            transform: translate(-70px,-30vh);
+            animation-name: key4;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .car5{
+            color: rgb(243, 228, 25);
+            font-size: 20px;
+            transform: translate(60px,-25vh);
+            animation-name: qe;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes qe{
+            0%{ transform: translate(-5px,-25vh);}
+            35%{transform: translate(-5px,-15vh);}
+            75%{ transform: translate(-5px,-5vh);
+            display: none;}
+            100%{transform: translate(-10px,5vh);}
+    
+        } 
+        @keyframes key4{
+            0%{transform: translate(-70px,-30vh);}
+            25%{transform: translate(-120px,-20vh);}
+            50%{ transform: translate(-120px,-10vh);}
+            75%{transform: translate(-80px,0vh); }
+             100%{ transform: translate(-80px,10vh); } 
+        }
+        @keyframes key3{
+            0%{transform: translate(85px,-50vh)}
+            20%{transform: translate(120px,-40vh);}
+            40%{transform: translate(120px,-30vh);}
+            60%{ transform: translate(120px,-20vh); }
+             80%{ transform: translate(80px,-10vh);}
+            100%{transform: translate(80px,10vh); }    
+        }
+        @keyframes key2{
+            0%{transform: translate(-100px,-60vh);}
+            15%{transform: translate(-120px,-50vh); display: none;}
+            30%{transform: translate(-120px,-40vh);}
+            45%{transform: translate(-30px,-30vh);  }
+             60%{transform: translate(-30px,-20vh);}
+            75%{transform: translate(5px,-10vh);  }    
+                90%{transform: translate(5px,-0vh); }    
+                100%{transform: translate(5px,5vh); } 
+               
+        }
+        
+        @keyframes key1{
+            0%{transform: translate(100px,-80vh);}
+            10%{transform: translate(-120px,-70vh);}
+            30%{transform: translate(-120px,-60vh);}
+            40%{transform: translate(80px,-50vh);}
+            50%{transform: translate(80px,-40vh);display: none; }
+            60%{transform: translate(40px,-30vh); }
+             70%{transform: translate(40px,-20vh); }  
+                80%{transform: translate(120px,-10vh); } 
+                90%{transform: translate(120px,0vh); }     
+                100%{transform: translate(100px,10vh); } 
+        }
+        .maincar{
+            color: rgb(243, 29, 25);
+            font-size: 20px;
+            animation-name: maincarkey;
+            animation-duration: 4s;
+            animation-iteration-count: 3;
+            animation-timing-function: linear;
+            
+
+        }
+        
+        .rchange{
+            color: rgb(243, 25, 25);
+            font-size: 20px;
+            transform: translate(-30px,0vh);
+        
+            
+       
+        }
+        .lchange{
+            color: rgb(243, 25, 25);
+            font-size: 20px;
+            transform: translate(30px,0vh);
+        }
+        
+    
 
     </style>
 </head>
@@ -54,6 +167,25 @@
         <div class="lines"></div>
         <i class="fa-solid fa-car car1"></i>
         <i class="fa-solid fa-car car2"></i>
+        <i class="fa-solid fa-car car3"></i>
+        <i class="fa-solid fa-car car4"></i>
+        <i class="fa-solid fa-car car5"></i>
+        <i class="fa-solid fa-car maincar"></i>
+        <button onclick="fun1()">left</button>
+        <button onclick="fun2()">right</button>
+    <script>
+        let ref=document.getElementsByClassName("maincar")[0]
+        function fun1(){
+             console.log(ref)
+            ref.className="lchange"
+        }
+        function fun2(){
+            ref.className="rchange"
+            console.log(ref)
+            }
+    </script>
+
     </div>
+
 </body>
 </html

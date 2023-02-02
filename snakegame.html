@@ -178,6 +178,8 @@
         </div>
         <div  onclick="user(this)" class="die1">user<i class="fa-solid fa-dice-five size"></i> </div>
         <div  class="die2">Computer<i class="fa-solid fa-dice-one size"></i> </div>
+        <div class="scor1"></div>
+        <div class="scor2"></div>
         <h1 id="dis"></h1>
     
         
@@ -190,16 +192,23 @@
          var comsum=1
          let arr=['<i class="fa-solid fa-dice-one size">','<i class="fa-solid fa-dice-two size">','<i class="fa-solid fa-dice-three size">','<i class="fa-solid fa-dice-four size">','<i class="fa-solid fa-dice-five size">','<i class="fa-solid fa-dice-six"></i>']
 function user(e){
-    let us=Math.floor(Math.random()*6)
-    let co=Math.floor(Math.random()*6)
+    let us=Math.floor(Math.random()*6)+1
+    let co=Math.floor(Math.random()*6)+1
+    e.innerHTML=arr[us-1]
+    document.getElementsByClassName("die2")[0].innerHTML=arr[co-1]
     let prev_user_box= document.getElementById("i"+usersum)
     let prev_comp_box= document.getElementById("i"+comsum)
     console.log(prev_user_box,prev_comp_box)
         prev_user_box.className="items"
         prev_comp_box.className="items"
 
-    usersum+=us+1
-    comsum+=co+1
+    usersum+=us
+    comsum+=co
+    let s1= document.getElementsByClassName("scor1")[0]
+    s1.innerHTML=usersum
+    let s2= document.getElementsByClassName("scor2")[0]
+    s2.innerHTML=comsum
+   
     if (usersum >99 ||comsum>99)
     {
         declare_winner(usersum,comsum)
