@@ -3,24 +3,34 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <Style>
+        *{
+            color: white;
+            padding: 0px;
+            margin: 0px;
+        }
         .body{
             width: 100%;
             height: 100vh;
+            background-image: url("https://img.freepik.com/premium-vector/poker-dice-view-golden-white-dice-casino-gold-dice-black-background-online-casino-dice-gambling-concept-isolated-black_195742-198.jpg?w=360");
            /* background: linear-gradient(rgba(30, 98, 217, 0.3),rgba(232, 42, 42,0.5),hsla(118, 92%, 66%, 0.302));   */
+           background-size: cover;
         }
         .grid-container{
             width: 45%;
             display: grid;
             grid-template-columns:auto auto auto auto auto auto auto auto auto auto;
-            border: 1px solid black;
-            background-color: transparent
+            border: 1px solid white;
+            background-color: transparent;
+            box-shadow: 2px 2px  rgb(247, 211, 6);
+        
             
         }
         .items{
             width: 60px;
             height: 60px;
-            border: 1px solid black;
-            position: ;
+            border: 1px solid white;
+            box-shadow: 2px 2px 2px 2px rgb(246, 230, 6);
+            
         }
         
         
@@ -47,6 +57,10 @@
             font-size: 100px;
             
         }
+        .usercon{
+            display: flex;
+            flex-direction: column;
+        }
         
         
     </Style>
@@ -54,7 +68,14 @@
 </head>
 <body>
     <div class="body">
-     <div class="con">   
+     <div class="con">
+        <div class="usercon">
+            <div>First user</div>
+        <div  onclick="user(this)" class="die1"><i class="fa-solid fa-dice-five size"></i> </div>
+       <div> <span>First user  current position  </span><span class="scor1"></span></div>
+        <h1 id="disp"></h1>
+    </div>
+
         <div class="grid-container">
             
             <div id="i1" class="items">1</div>
@@ -176,11 +197,12 @@
           
 
         </div>
-        <div  onclick="user(this)" class="die1">user<i class="fa-solid fa-dice-five size"></i> </div>
-        <div  class="die2">Computer<i class="fa-solid fa-dice-one size"></i> </div>
-        <div class="scor1"></div>
-        <div class="scor2"></div>
-        <h1 id="dis"></h1>
+        <div class="usercon">
+         <div>Second user</div>   
+        <div  onclick="user2(this)" class="die2"><i class="fa-solid fa-dice-one size"></i> </div>
+      <div> <span>Second user current position </span> <span class="scor2"></span></div>
+        <h1 id="disp"></h1>
+    </div>
     
         
 </div>
@@ -189,48 +211,60 @@
    
     <script>
          var usersum=1
-         var comsum=1
+         var user2sum=1
          let arr=['<i class="fa-solid fa-dice-one size">','<i class="fa-solid fa-dice-two size">','<i class="fa-solid fa-dice-three size">','<i class="fa-solid fa-dice-four size">','<i class="fa-solid fa-dice-five size">','<i class="fa-solid fa-dice-six"></i>']
 function user(e){
-    let us=Math.floor(Math.random()*6)+1
-    let co=Math.floor(Math.random()*6)+1
-    e.innerHTML=arr[us-1]
-    document.getElementsByClassName("die2")[0].innerHTML=arr[co-1]
-    let prev_user_box= document.getElementById("i"+usersum)
-    let prev_comp_box= document.getElementById("i"+comsum)
-    console.log(prev_user_box,prev_comp_box)
+        let us=Math.floor(Math.random()*6)+1
+        e.innerHTML=arr[us-1]
+        let prev_user_box= document.getElementById("i"+usersum)
         prev_user_box.className="items"
-        prev_comp_box.className="items"
-
-    usersum+=us
-    comsum+=co
-    let s1= document.getElementsByClassName("scor1")[0]
-    s1.innerHTML=usersum
-    let s2= document.getElementsByClassName("scor2")[0]
-    s2.innerHTML=comsum
+        usersum+=us
+        let s1= document.getElementsByClassName("scor1")[0]
+        s1.innerHTML=usersum
    
-    if (usersum >99 ||comsum>99)
-    {
-        declare_winner(usersum,comsum)
-        return
-    }
+        if (usersum >99 ||user2sum>99)
+        {
+            declare_winner(usersum,user2sum)
+            return
+        }
     
-    console.log(usersum,comsum)
    let user_box= document.getElementById("i"+usersum)
-   let comp_box= document.getElementById("i"+comsum)
-    console.log(user_box,comp_box)
    user_box.className="img"
-   comp_box.className="img2"
     
 
 }
-function declare_winner(usersum,comsum){
+function user2(e){
+    let co=Math.floor(Math.random()*6)+1
+    e.innerHTML=arr[co-1]
+    let prev_user2_box= document.getElementById("i"+user2sum)
+    prev_user2_box.className="items"
+    user2sum+=co
+    let s2= document.getElementsByClassName("scor2")[0]
+    s2.innerHTML=user2sum
+    if (usersum >99 ||user2sum>99)
+        {
+            declare_winner(usersum,user2sum)
+            return 0
+        }
+    let user2_box= document.getElementById("i"+user2sum)
+    user2_box.className="img2"
+
+
+
+
+
+
+
+}
+function declare_winner(usersum,user2sum){
+    console.log(usersum,user2sum)
     let ref_disp=document.getElementById("disp")
+    console.log(ref_disp)
     if (usersum>99){
-        ref_disp.innerHTML="user won"
+        ref_disp.innerHTML=" Game over user won"
     }
     else{
-        ref_disp.innerHTML="computer won"
+        ref_disp.innerHTML=" Game over computer won"
     }
 }
 
