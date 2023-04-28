@@ -20,7 +20,7 @@
             align-items: center;
             position: relative;
             left: 40%;
-            width: 20%;
+            width: 300px;
             height: 100vh;
         }
         .lines{
@@ -130,27 +130,17 @@
         .maincar{
             color: rgb(243, 29, 25);
             font-size: 20px;
-            animation-name: maincarkey;
+            /* animation-name: maincarkey;
             animation-duration: 4s;
             animation-iteration-count: 3;
-            animation-timing-function: linear;
+            animation-timing-function: linear; */
             
 
         }
+        .carmover{display: flex; justify-content: space-between;}
+        .carmover div{ width: 27px;height: 25px ;background-color: black; border: 2px solid black;  }
         
-        .rchange{
-            color: rgb(243, 25, 25);
-            font-size: 20px;
-            transform: translate(-30px,0vh);
-        
-            
        
-        }
-        .lchange{
-            color: rgb(243, 25, 25);
-            font-size: 20px;
-            transform: translate(30px,0vh);
-        }
         
     
 
@@ -165,24 +155,73 @@
         <div class="lines"></div>
         <div class="lines"></div>
         <div class="lines"></div>
+       
         <i class="fa-solid fa-car car1"></i>
         <i class="fa-solid fa-car car2"></i>
         <i class="fa-solid fa-car car3"></i>
         <i class="fa-solid fa-car car4"></i>
         <i class="fa-solid fa-car car5"></i>
-        <i class="fa-solid fa-car maincar"></i>
-        <button onclick="fun1()">left</button>
-        <button onclick="fun2()">right</button>
+        <div class="carmover">
+            <div class="arr"></div>
+            <div class="arr"></div>
+            <div class="arr"></div>
+            <div class="arr"></div>
+            <div class="arr"></div>
+            <div class="arr"></div>
+            <div class="arr"></div>
+            <div class="arr"></div>
+            <div class="arr"></div>
+            <div class="arr"></div>
+            <div class="arr"></div>
+            <div class="arr"></div>
+
+            
+        </div>
+        <button onclick="funleft()">left</button>
+        <button onclick="funright()">right</button>
+        
     <script>
-        let ref=document.getElementsByClassName("maincar")[0]
-        function fun1(){
-             console.log(ref)
-            ref.className="lchange"
+            var arr=document.getElementsByClassName("arr")
+            var m=Math.floor(arr.length/2)
+            var i=m
+            arr[m].innerHTML='<i class="fa-solid fa-car maincar"></i>'
+            
+            console.log(leftarr)
+
+        function funleft(){
+            prev=i+1
+            arr[prev].innerHTML=""
+            arr[i].innerHTML='<i class="fa-solid fa-car maincar"></i>'
+           if (i>1) 
+            i--
         }
-        function fun2(){
-            ref.className="rchange"
-            console.log(ref)
-            }
+
+        function funright(){
+            prev=i-1
+            arr[prev].innerHTML=""
+            arr[i].innerHTML='<i class="fa-solid fa-car maincar"></i>'
+            if (i<arr.length-3)
+            i++
+
+        }
+        
+
+        
+
+
+
+
+
+
+
+        //     rightarr[j--].innerHTML=" "
+        // console.log(j)}
+            
+        //     rightarr[j].innerHTML='<i class="fa-solid fa-car maincar"></i>'
+        //    j=j+1
+        //    console.log(j)
+             
+    
     </script>
 
     </div>
